@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writter - Login</title>
+    <%- include("partials/font.ejs") %>
+    <script defer src="scripts/validate.js"></script>
+</head>
+<body>
+    <div class="container login">
+        <div class="main-login">
+            <h1 class="main-message" id="main-message">Enter the password</h1>
+            <form class="login-form" onsubmit="validatePassword(event)">
+                <input class="password" type="password" placeholder="Password" name="password">
+                <input class="button submit-btn" type="submit" value="Submit"></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

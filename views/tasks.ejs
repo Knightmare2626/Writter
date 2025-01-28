@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writter</title>
+    <link rel="stylesheet" href="styles/task.css" />
+    <%- include("partials/font.ejs") %>
+    
+  </head>
+  <body>
+    <header>
+      <h1>Writter</h1>
+      <form id="new-task-form" method="POST" action="/add">
+        <input
+        type="text"
+        name="task"
+        id="new-task-input"
+        placeholder="Add to your task list"
+        />
+        <input type="submit" id="new-task-submit" value="Add task" />
+      </form>
+    </header>
+    
+    <main>
+      <section class="task-list">
+        <h2>Tasks</h2>
+        
+        <div id="tasks">
+          <% if (locals.tasks && tasks.length > 0) { %>
+            <% tasks.forEach((task) => { %>
+              <div class="task">
+                <div class="content">
+                  <input
+                  type="text"
+                  class="text"
+                  value="<%- task %>"
+                  readonly
+                  />
+                </div>
+                <div class="actions">
+                  <!-- <form id="edit-task-form" method="POST" action="/edit"> -->
+                    <button class="edit">Edit</button>
+                    <!-- <div class="taskIndex"></div>
+                    <input type="submit" class="edit" id="edit-task-submit" value="Edit"/> -->
+                  <!-- </form> -->
+                  
+                  <!-- <form id="delete-task-form" method="POST" action="/delete"> -->
+                    <button class="delete">Delete</button>
+                    <!-- <div class="taskIndex"></div>
+                    <input type="submit" class="delete" id="delete-task-submit" value="Delete"/> -->
+                  <!-- </form> -->
+                </div>
+              </div>
+              <% }); %>
+              <% } else { %>
+                <div class="task">
+                  <div class="content">
+                    <input
+                    type="text"
+                    class="text"
+                    value="Random Note/Task"
+                    readonly
+                    />
+                  </div>
+                  <div class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                  </div>
+                </div>
+                <% } %>
+              </div>
+            </section>
+          </main>
+          <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+          <script src="/scripts/task.js"></script>
+          
+        </body>
+        </html>

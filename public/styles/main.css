@@ -1,0 +1,173 @@
+:root {
+    --navbar-color: #1f2d4b;
+    --button-color: #a25ddf;
+    --button-accent-color: #a240f7;
+    --background-color: #9abac5;
+    --font-color: white;
+    --test-color: #384152;
+    --outline-color: #67a09b;
+    --task-color: #111828;
+}
+
+
+
+/*  Universal CSS  */
+
+* {
+    color: var(--font-color);
+    font-family: "Open Sans", serif;
+}
+
+html {
+    background-color: var(--test-color);
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    font-size: 1.1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 0px 20px;
+    border-bottom: 3px solid var(--outline-color);
+    align-items: center;
+    background-color: var(--navbar-color, white);
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: baseline;
+}
+
+a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+/* Specific CSS */
+
+.logo {
+    width: clamp(40px, 3vw, 50px);
+    height: clamp(40px, 3vw, 50px);
+    border-radius: 30%;
+    margin-left: 30px;
+}
+
+.left-nav {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.vertical-line {
+    color: var(--font-color);
+    font-size: 1.5rem;
+}
+
+.name {
+    color: var(--font-color);
+    margin: 5px;
+}
+
+.button {
+    color: var(--font-color);
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: "Open Sans", serif;
+    padding: 0px 7px;
+    cursor: pointer;
+}
+
+.log-in {
+    color: var(--font-color);
+    background-color: var(--navbar-color);
+}
+
+.start { 
+    background-color: var(--button-accent-color);
+    padding: 10px 14px;
+    margin-right: 30px;
+    border-radius: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.container p {
+    max-width: 500px;
+    margin-bottom: 40px;
+}
+
+.main-text {
+    width: 40%;
+    color: var(--font-color);
+}
+
+.example {
+    padding: 10px 10px;
+    border: 1px solid var(--outline-color);
+    border-radius: 30px;
+    width: clamp(300px, 35%, 600px);
+}
+
+.extra {
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+/* Login page */
+
+.main-login h1{
+   font-size: 2.8rem;
+   color: rgb(201, 185, 226);
+   font-family: "Open Sans";
+}
+
+.login-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    /* height: 3.3rem; */
+}
+
+.password {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    color: black;
+    font-family: Geneva, Verdana, sans-serif;
+    background-color: rgb(188, 239, 241);
+}
+
+.submit-btn {
+    margin: 5px;
+    padding: 8px;
+    color: white;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    border-radius: 5px;
+    background-color: var(--button-accent-color);
+}
+

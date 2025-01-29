@@ -13,13 +13,17 @@ $(document).on("click", ".save", function () {
 })
 
 $(document).on("click", ".delete", function () {
-    $(this).closest(".task").remove();
+    const taskElement = $(this).closest(".task"); 
+    const taskIndex = taskElement.index(); 
 
-    const taskIndex = $(this).closest(".actions").index();
-    console.log(taskIndex)
-    // $.post("/delete", { taskIndex: taskIndex }, (response) => {
-    //     console.log("Task deleted successfully.");
-    // }).fail(() => {
-    //     console.error("Error deleting the task.");
-    // })
-})
+    console.log("Deleting task:", taskElement.find(".text").val());
+    console.log("Task index:", taskIndex);
+
+    if (taskIndex >= 0) {
+        $.post("/delete", { taskIndex: taskIndex }, () => {
+            taskElement.remove();
+        });
+    } else {
+        console.error("Task index not found!");
+    }
+});

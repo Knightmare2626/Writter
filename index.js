@@ -1,15 +1,19 @@
 import express from "express"
-import {addTask, getAllTasks} from "./taskManager.js"
+import {addTask, deleteTask, getAllTasks} from "./taskManager.js"
 
 const app = express();
 const PORT = 3000;
 
-const mainPage = app.route(["/", "/home", "/main", "/index"]);
-const allPage = app.route(["/feed", "/all", "/task", "/tasks"]);
-const loginPage = app.route(["/login"]);
-
 app.use(express.static("public"));
 app.use(express.urlencoded( { extended: true } ));
+
+app.get("/home", (req, res) => {
+    res.render("home.ejs");
+})
+
+app.get("/login", (req, res) => {
+    res.render("login.ejs");
+})
 
 app.get("/tasks", (req, res) => {
     res.render("tasks.ejs", {
@@ -31,9 +35,7 @@ app.post("/add", (req, res) => {
 app.post("/delete", (req, res) => {
     const taskIndex = req.body.taskIndex;
     console.log(taskIndex);
-    if (taskIndex !== undefined) {
-        deleteTask(taskIndex);
-    }
+    deleteTask(taskIndex);
     res.redirect("/tasks");
 })
 

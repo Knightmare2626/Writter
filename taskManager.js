@@ -1,4 +1,4 @@
-let taskList = [];
+export let taskList = [];
 
 export function addTask(task) {
     taskList.push(task);
